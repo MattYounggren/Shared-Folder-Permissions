@@ -17,9 +17,6 @@ Use this switch to only discover shares where sensitive groups have permissions.
 .PARAMETER ReportFile
 Use this to set a different HTML file name than the default of SharedFolderPermissions.html
 
-.PARAMETER EmailAddress
-This will set the EmailAddress to a non default value.
-
 .PARAMETER ExcludeInherited
 Use this switch to exclude inherited permissions from the report.
 
@@ -28,9 +25,8 @@ Get-SharedFolderPermissions -ComputerName "computer"
 This example runs against one server named computer.
 
 .EXAMPLE
-Get-SharedFolderPermissions -ComputerName $serverArray -EmailAddress "test@abc.com"
+Get-SharedFolderPermissions -ComputerName $serverArray
 This example runs against an array of servers held in the $serverArray variable.
-It will send the report to an email address of test@abc.com
 
 .EXAMPLE
 Get-ADComputer "Computer" | Select @{N='ComputerName'; E={$_.Name}} | .\Get-SharedFolderPermissions.ps1
